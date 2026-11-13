@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quản lý – Tiệm em Bông Béo</title>
+  <link rel="icon" href="images/bong-beo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="app.css">
+</head>
+<body class="app">
+  <header class="app-head">
+    <a class="logo" href="index.html" title="Về trang giới thiệu"><img src="images/bong-beo.svg" alt="" width="40" height="40"></a>
+    <div>
+      <strong>Tiệm em Bông Béo</strong>
+      <small>Quản lý tiệm · dữ liệu lưu trên máy này</small>
+    </div>
+  </header>
+
+  <main>
+    <!-- BÁN HÀNG -->
+    <section id="tab-ban" class="tab">
+      <h1>Hôm nay ăn gì nè?</h1>
+      <p class="sub">Bấm vào món để thêm vào đơn.</p>
+      <input id="search" class="search" type="search" placeholder="🔍 Tìm món… (gõ không dấu cũng được)" aria-label="Tìm món">
+      <div id="chips" class="chips" role="group" aria-label="Lọc theo danh mục"></div>
+      <div id="sell-grid" class="sell-grid"></div>
+
+      <div id="cart" class="cart" hidden>
+        <h2>🧺 Đơn đang chọn</h2>
+        <ul id="cart-items"></ul>
+        <label>Tên khách (không bắt buộc)<input id="c-name" maxlength="60" placeholder="Chị Na"></label>
+        <label>Ghi chú<input id="c-note" maxlength="120" placeholder="Ít cay, giao 5h chiều…"></label>
+        <div class="cart-foot">
+          <span>Tổng: <b id="cart-total">0đ</b></span>
+          <button id="cart-clear" class="ghost" type="button">Xóa</button>
+          <button id="cart-submit" class="primary" type="button">Tạo đơn</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ĐƠN HÀNG -->
+    <section id="tab-don" class="tab" hidden>
+      <h1>Đơn hàng</h1>
+      <p class="sub">Bấm “Hoàn thành” khi khách đã nhận món.</p>
+      <div class="chips" role="group" aria-label="Lọc đơn">
+        <button class="chip on" data-filter="pending" type="button">Đang làm</button>
+        <button class="chip" data-filter="done" type="button">Hoàn thành</button>
+        <button class="chip" data-filter="cancelled" type="button">Đã hủy</button>
+      </div>
+      <div id="order-list"></div>
+    </section>
+
+    <!-- SẢN PHẨM -->
+    <section id="tab-sp" class="tab" hidden>
+      <h1>Sản phẩm</h1>
+      <p class="sub">Thêm món mới hoặc tạm ẩn món đã hết.</p>
+      <form id="p-form" class="panel">
+        <h2>Thêm sản phẩm</h2>
+        <label>Tên sản phẩm<input name="name" required maxlength="60" placeholder="Bắp xào bơ"></label>
+        <label>Mô tả ngắn<input name="desc" maxlength="120" placeholder="Bắp Mỹ, bơ, hành phi, tôm khô"></label>
+        <div class="row">
+          <label>Giá (đồng)<input name="price" type="number" required min="0" step="1000" placeholder="20000"></label>
+          <label>Biểu tượng<input name="emoji" maxlength="4" placeholder="🌽"></label>
+        </div>
+        <label>Danh mục<select name="cat" id="p-cat"></select></label>
+        <label>Link ảnh (không bắt buộc)<input name="img" type="url" placeholder="https://…"></label>
+        <button class="primary" type="submit">Thêm sản phẩm</button>
+      </form>
+      <h2>Danh sách</h2>
+      <div id="p-list"></div>
+      <button id="reset" class="ghost danger" type="button">Khôi phục thực đơn mẫu</button>
+    </section>
+
+    <!-- THỐNG KÊ -->
+    <section id="tab-tk" class="tab" hidden>
+      <h1>Thống kê</h1>
+      <p class="sub">Chỉ tính các đơn đã hoàn thành.</p>
+      <div id="stats" class="stats"></div>
+      <h2>Món bán chạy</h2>
+      <ol id="top" class="top"></ol>
+    </section>
+  </main>
+
+  <nav class="tabbar" aria-label="Chức năng">
+    <button data-tab="tab-ban" class="on" type="button"><span>🛍️</span>Bán hàng</button>
+    <button data-tab="tab-don" type="button"><span>🧾</span>Đơn hàng<i id="badge" hidden></i></button>
+    <button data-tab="tab-sp" type="button"><span>🍡</span>Sản phẩm</button>
+    <button data-tab="tab-tk" type="button"><span>📊</span>Thống kê</button>
+  </nav>
+
+  <button id="cartbar" class="cartbar" type="button" hidden>🧺 <span id="cartbar-text"></span><b>Xem đơn ›</b></button>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
