@@ -1,0 +1,22 @@
+rules_version = '2';
+// Dữ liệu tiệm nằm dưới /shops/{mã tiệm}. Chỉ ai biết mã tiệm (dài, ngẫu nhiên) mới đọc/ghi được.
+// Không ai được liệt kê danh sách /shops nên không dò ra mã.
+service cloud.firestore {
+  match /databases/{db}/documents {
+    match /shops/{shop} {
+      allow get: if shop.size() >= 32;
+      allow create, update: if shop.size() >= 32
+        && request.resource.data.keys().hasOnly(['products', 'updatedAt'])
+        && request.resource.data.products is list
+        && request.resource.data.products.size() <= 200;
+
+      match /orders/{order} {
+        allow read, delete: if shop.size() >= 32;
+        allow create, update: if shop.size() >= 32
+          && request.resource.data.items is list
+          && request.resource.data.items.size() <= 100
+          && request.resource.data.status in ['pending', 'done', 'cancelled'];
+      }
+    }
+  }
+}

@@ -16,11 +16,22 @@
     <a class="logo" href="index.html" title="Về trang giới thiệu"><img src="images/bong-beo.svg" alt="" width="40" height="40"></a>
     <div>
       <strong>Tiệm em Bông Béo</strong>
-      <small>Quản lý tiệm · dữ liệu lưu trên máy này</small>
+      <small>Quản lý tiệm · <span id="sync" class="sync">● Đang kết nối…</span></small>
     </div>
   </header>
 
   <main>
+    <!-- NHẬP MÃ TIỆM (khi máy chưa có mã) -->
+    <section id="tab-lock" class="tab" hidden>
+      <h1>Chào bạn 👋</h1>
+      <p class="sub">Trang này dành cho người làm của tiệm. Hãy mở link mời mà chủ tiệm gửi, hoặc dán link/mã tiệm vào đây.</p>
+      <form id="lock-form" class="panel">
+        <label>Link mời hoặc mã tiệm<input name="code" required autocomplete="off" placeholder="https://…#k=… hoặc mã tiệm"></label>
+        <button class="primary" type="submit">Vào tiệm</button>
+      </form>
+      <p class="sub"><a href="index.html">← Về trang giới thiệu tiệm</a></p>
+    </section>
+
     <!-- BÁN HÀNG -->
     <section id="tab-ban" class="tab">
       <h1>Hôm nay ăn gì nè?</h1>
@@ -73,6 +84,13 @@
       <h2>Danh sách</h2>
       <div id="p-list"></div>
       <button id="reset" class="ghost danger" type="button">Khôi phục thực đơn mẫu</button>
+
+      <div class="panel share">
+        <h2>Dùng trên máy khác</h2>
+        <p>Đơn hàng và thực đơn tự đồng bộ giữa mọi máy có link mời. Chỉ gửi link này cho người làm của tiệm, ai có link là xem và sửa được.</p>
+        <button id="share" class="primary" type="button">🔗 Chép link mời</button>
+        <button id="logout" class="ghost danger" type="button">Gỡ mã tiệm khỏi máy này</button>
+      </div>
     </section>
 
     <!-- THỐNG KÊ -->

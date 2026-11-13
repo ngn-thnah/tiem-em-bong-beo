@@ -114,3 +114,10 @@ button:focus-visible, input:focus-visible, select:focus-visible { outline: 3px s
 .cartbar span { flex: 1; text-align: left; }
 .cartbar b { color: #ffd1de; }
 .app .cart { margin-bottom: 72px; }
+
+.sync { color: #c0392b; }
+.sync.ok { color: #2e9e5b; }
+.share { margin-top: 24px; }
+.share p { margin: 0 0 12px; }
+.share .primary, .share .ghost { width: 100%; padding: 12px; margin-top: 8px; }
+.tab a { color: var(--pink); font-weight: 700; }

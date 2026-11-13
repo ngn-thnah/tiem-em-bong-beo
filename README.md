@@ -4,7 +4,7 @@ Trang web tiệm đồ ăn vặt, chạy trên GitHub Pages: https://ngn-thnah.g
 
 - `index.html` – trang giới thiệu tiệm và thực đơn.
 - `quan-ly.html` – trang quản lý: **Bán hàng**, **Đơn hàng**, **Sản phẩm**, **Thống kê**.
-  Dữ liệu lưu trong trình duyệt của máy đang dùng (localStorage), máy khác sẽ không thấy.
+  Dữ liệu đồng bộ qua Firebase Firestore (`firestore.rules`). Chỉ ai có link mời chứa mã tiệm mới vào được; mã không nằm trong repo.
 - Kiểm tra logic: `node test.mjs`
 
 Thông tin liên hệ trên trang là dữ liệu mẫu.
