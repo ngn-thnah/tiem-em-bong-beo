@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Bông Béo - chú mèo tròn ủm">
+  <!-- tai -->
+  <path d="M52 70 L60 28 L90 56 Z" fill="#fff" stroke="#5a3e36" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M148 70 L140 28 L110 56 Z" fill="#fff" stroke="#5a3e36" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M62 60 L65 40 L80 54 Z" fill="#ffb6c8"/>
+  <path d="M138 60 L135 40 L120 54 Z" fill="#ffb6c8"/>
+  <!-- thân tròn -->
+  <ellipse cx="100" cy="118" rx="78" ry="68" fill="#fff" stroke="#5a3e36" stroke-width="4"/>
+  <!-- mắt -->
+  <path d="M68 108 q8 -10 16 0" fill="none" stroke="#5a3e36" stroke-width="5" stroke-linecap="round"/>
+  <path d="M116 108 q8 -10 16 0" fill="none" stroke="#5a3e36" stroke-width="5" stroke-linecap="round"/>
+  <!-- má hồng -->
+  <ellipse cx="62" cy="128" rx="12" ry="7" fill="#ffb6c8"/>
+  <ellipse cx="138" cy="128" rx="12" ry="7" fill="#ffb6c8"/>
+  <!-- miệng -->
+  <path d="M92 124 q4 6 8 0 q4 6 8 0" fill="none" stroke="#5a3e36" stroke-width="4" stroke-linecap="round"/>
+  <!-- ria -->
+  <path d="M40 116 h18 M42 126 l16 -3 M160 116 h-18 M158 126 l-16 -3" stroke="#5a3e36" stroke-width="3" stroke-linecap="round"/>
+  <!-- nơ -->
+  <path d="M100 52 l-18 -10 v20 Z M100 52 l18 -10 v20 Z" fill="#ff7aa2" stroke="#5a3e36" stroke-width="3" stroke-linejoin="round"/>
+  <circle cx="100" cy="52" r="5" fill="#ff7aa2" stroke="#5a3e36" stroke-width="3"/>
+</svg>

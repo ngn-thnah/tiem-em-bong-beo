@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 160" role="img" aria-label="Bánh flan caramel">
+  <rect width="200" height="160" fill="#fff4d6"/>
+  <!-- đĩa -->
+  <ellipse cx="100" cy="128" rx="76" ry="16" fill="#fff" stroke="#5a3e36" stroke-width="4"/>
+  <!-- thân flan -->
+  <path d="M58 124 L70 60 h60 L142 124 Z" fill="#ffd56b" stroke="#5a3e36" stroke-width="4" stroke-linejoin="round"/>
+  <!-- caramel -->
+  <path d="M70 60 h60 l2 12 q-8 10 -14 0 q-8 12 -16 0 q-8 12 -16 0 q-8 10 -14 0 Z" fill="#a0521d" stroke="#5a3e36" stroke-width="3" stroke-linejoin="round"/>
+  <!-- mặt -->
+  <circle cx="88" cy="96" r="4" fill="#5a3e36"/><circle cx="112" cy="96" r="4" fill="#5a3e36"/>
+  <path d="M95 104 q5 5 10 0" fill="none" stroke="#5a3e36" stroke-width="3" stroke-linecap="round"/>
+  <ellipse cx="80" cy="106" rx="6" ry="4" fill="#ffb6c8"/><ellipse cx="120" cy="106" rx="6" ry="4" fill="#ffb6c8"/>
+</svg>
